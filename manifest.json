@@ -1,0 +1,22 @@
+
+{
+  "short_name": "NoteTaker AI",
+  "name": "NoteTaker AI",
+  "icons": [
+    {
+      "src": "https://github.com/OwnOptic/Website-storage/blob/main/NoteTaker.png?raw=true",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://github.com/OwnOptic/Website-storage/blob/main/NoteTaker.png?raw=true",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#111827",
+  "background_color": "#111827",
+  "description": "An intelligent note-taking application that uses AI to automatically categorize, summarize, and organize your notes."
+}

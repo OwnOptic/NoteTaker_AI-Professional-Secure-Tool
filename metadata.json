@@ -1,0 +1,9 @@
+{
+  "name": "NoteTaker AI_v11",
+  "description": "An intelligent note-taking application that uses AI to automatically categorize, summarize, and organize your notes by project and topic.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "prompt": ""
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="https://github.com/OwnOptic/Website-storage/blob/main/NoteTaker.png?raw=true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NoteTaker AI</title>
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#111827" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#111827', // Almost black
+              'secondary': '#1F2937', // Dark gray
+              'tertiary': '#374151', // Medium gray
+              'accent': '#6D28D9', // Vibrant Violet
+              'highlight': '#8B5CF6', // Lighter Violet
+              'light': '#F3F4F6', // Off-white text
+              'subtle': '#9CA3AF', // Gray text
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css">
+    
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^18.2.0",
+    "react-dom/client": "https://esm.sh/react-dom@^18.2.0/client",
+    "react/": "https://esm.sh/react@^18.2.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^0.14.1",
+    "mammoth": "https://esm.sh/mammoth@1.8.0",
+    "pdfjs-dist/build/pdf.mjs": "https://esm.sh/pdfjs-dist@4.4.168/build/pdf.mjs",
+    "idb": "https://esm.sh/idb@^8.0.0",
+    "pdfjs-dist/": "https://esm.sh/pdfjs-dist@4.4.168/",
+    "react-dom/": "https://esm.sh/react-dom@^18.2.0/",
+    "read-excel-file": "https://esm.sh/read-excel-file@^5.8.1",
+    "marked": "https://esm.sh/marked@^13.0.1",
+    "dompurify": "https://esm.sh/dompurify@^3.1.5"
+  }
+}
+</script>
+  </head>
+  <body class="bg-primary text-light font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(error => {
+              console.log('ServiceWorker registration failed: ', error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

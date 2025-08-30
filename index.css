@@ -1,0 +1,154 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1F2937; /* secondary */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151; /* tertiary */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4B5563; /* a bit lighter gray */
+}
+
+/* Light Theme */
+.light {
+  --color-primary: #ffffff;
+  --color-secondary: #f3f4f6; /* gray-100 */
+  --color-tertiary: #e5e7eb; /* gray-200 */
+  --color-accent: #6D28D9;
+  --color-highlight: #8B5CF6;
+  --color-light: #111827; /* almost black */
+  --color-subtle: #6b7280; /* gray-500 */
+  --color-border: #d1d5db; /* gray-300 */
+}
+
+.light body {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+.light ::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+}
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Specific component overrides for light theme */
+.light .bg-primary { background-color: var(--color-primary); }
+.light .bg-secondary { background-color: var(--color-secondary); }
+.light .bg-tertiary { background-color: var(--color-tertiary); }
+.light .bg-accent { background-color: var(--color-accent); }
+.light .text-light { color: var(--color-light); }
+.light .text-subtle { color: var(--color-subtle); }
+.light .border-tertiary { border-color: var(--color-border); }
+.light .border-tertiary\/50 { border-color: rgba(209, 213, 219, 0.5); }
+.light .border-tertiary\/20 { border-color: rgba(209, 213, 219, 0.2); }
+.light .hover\:bg-tertiary:hover { background-color: var(--color-tertiary); }
+.light .hover\:bg-tertiary\/50:hover { background-color: rgba(229, 231, 235, 0.5); }
+.light .hover\:bg-tertiary\/30:hover { background-color: rgba(229, 231, 235, 0.3); }
+.light .hover\:bg-primary:hover { background-color: var(--color-primary); }
+.light .hover\:bg-primary\/50:hover { background-color: rgba(255, 255, 255, 0.5); }
+.light .bg-primary\/70 { background-color: rgba(249, 250, 251, 0.7); } /* gray-50 */
+.light .bg-primary\/50 { background-color: rgba(249, 250, 251, 0.5); }
+.light .bg-primary\/30 { background-color: rgba(243, 244, 246, 0.3); }
+.light .bg-secondary\/30 { background-color: rgba(243, 244, 246, 0.3); }
+.light .bg-secondary\/20 { background-color: rgba(243, 244, 246, 0.2); }
+.light .ring-tertiary { --tw-ring-color: var(--color-border); }
+.light .text-light\/90 { color: rgba(17, 24, 39, 0.9); }
+.light .text-subtle.hover\:text-light:hover { color: var(--color-light); }
+.light .bg-black\/60 { background-color: rgba(31, 41, 55, 0.6); }
+.light .bg-black\/50 { background-color: rgba(31, 41, 55, 0.5); }
+.light .placeholder-subtle::placeholder { color: var(--color-subtle); }
+.light .disabled\:bg-tertiary:disabled { background-color: var(--color-tertiary); }
+.light .fill-accent\/60 { fill: rgba(109, 40, 217, 0.6); }
+.light .group:hover .fill-accent\/60 { fill: #8B5CF6; }
+
+/* Prose styles for Markdown Preview */
+.prose {
+    line-height: 1.6;
+}
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+    font-weight: 600;
+}
+.prose h1 { font-size: 2.25em; }
+.prose h2 { font-size: 1.875em; border-bottom: 1px solid var(--color-border); padding-bottom: .3em; }
+.prose h3 { font-size: 1.5em; }
+.prose p { margin-bottom: 1em; }
+.prose ul, .prose ol { margin-left: 1.5em; margin-bottom: 1em; }
+.prose li { margin-bottom: 0.5em; }
+.prose ul { list-style-type: disc; }
+.prose ol { list-style-type: decimal; }
+.prose a { color: var(--color-highlight); text-decoration: underline; }
+.prose blockquote { border-left: 4px solid var(--color-border); padding-left: 1em; margin-left: 0; font-style: italic; color: var(--color-subtle); }
+.prose code { background-color: var(--color-tertiary); padding: .2em .4em; font-size: 85%; border-radius: 3px; }
+.prose pre { background-color: var(--color-secondary); padding: 1em; border-radius: 6px; overflow-x: auto; }
+.prose pre code { padding: 0; background-color: transparent; }
+.prose strong { font-weight: 700; }
+.prose em { font-style: italic; }
+.prose hr { border-top: 1px solid var(--color-border); margin: 2em 0; }
+
+/* Print styles */
+@media print {
+    body {
+        background-color: #fff !important;
+        color: #000 !important;
+    }
+
+    /* Hide all UI elements except the note editor's content */
+    aside,
+    #chatbot-button,
+    #note-editor > header,
+    #note-editor > .z-10, /* Category Selector Bar */
+    #note-editor-insights,
+    #note-editor > footer {
+        display: none !important;
+    }
+    
+    main, #note-editor {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    #printable-content {
+        display: block !important;
+        padding: 1in;
+    }
+
+    #printable-content h1 {
+      font-size: 24pt;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+
+    #printable-content .content-body {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    #printable-content .content-body p,
+    #printable-content .content-body ul,
+    #printable-content .content-body ol {
+        margin-bottom: 1em;
+    }
+}
